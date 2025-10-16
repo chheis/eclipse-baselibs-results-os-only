@@ -1,0 +1,787 @@
+{
+  "expand": "schema,names",
+  "maxResults": 30,
+  "total": 30,
+  "issues": [
+    {
+      "id": "021",
+      "key": "REQ-C-Result-021",
+      "fields": {
+        "summary": "Provide Result type alias for expected with Error",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The library shall provide Result<T> as type alias for score::details::expected<T, score::result::Error>. This type shall be used for all operations that can fail instead of throwing exceptions.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "022",
+      "key": "REQ-C-Result-022",
+      "fields": {
+        "summary": "Implement C++23 expected for exception-free error handling",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The library shall implement the C++23 expected type (P0323) for exception-free error handling. This implementation shall support both value and error states without throwing exceptions.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "023",
+      "key": "REQ-C-Result-023",
+      "fields": {
+        "summary": "Support custom error domains via ErrorDomain class",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The library shall provide an abstract ErrorDomain class that users can inherit to define custom error domains. Each domain shall implement MessageFor() to translate error codes into human-readable strings.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "024",
+      "key": "REQ-C-Result-024",
+      "fields": {
+        "summary": "Support enum-based error codes with ErrorCode type",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The library shall support user-defined enum classes as error codes where the underlying type is ErrorCode. Error enums shall be validated at compile-time using type traits.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "025",
+      "key": "REQ-C-Result-025",
+      "fields": {
+        "summary": "Enable ADL-based MakeError function for error construction",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The library shall use Argument-Dependent Lookup (ADL) to find user-defined MakeError() functions that construct Error instances from custom error codes. This enables domain-specific error creation.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "026",
+      "key": "REQ-C-Result-026",
+      "fields": {
+        "summary": "Provide Error class with code, domain, and user message",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The library shall provide an Error class containing an error code, error domain reference, and optional user message. The Error class shall support comparison operations and stream output.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "027",
+      "key": "REQ-C-Result-027",
+      "fields": {
+        "summary": "Support implicit conversion from error codes to Error",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The Error class shall provide an implicit conversion constructor from user-defined error code enums. This constructor shall use ADL to invoke the appropriate MakeError() function.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "028",
+      "key": "REQ-C-Result-028",
+      "fields": {
+        "summary": "Provide MakeUnexpected helper for creating unexpected results",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The library shall provide MakeUnexpected() helper functions to create unexpected Result values from error codes and optional user messages. This simplifies error return syntax.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "029",
+      "key": "REQ-C-Result-029",
+      "fields": {
+        "summary": "Support ResultBlank for void return types",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The library shall provide ResultBlank as Result<Blank> for functions that return only success/error without a value. This shall be used instead of Result<void> which is not supported.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "030",
+      "key": "REQ-C-Result-030",
+      "fields": {
+        "summary": "Enable error comparison with error codes",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The Error class shall support equality/inequality comparison with user-defined error code enums. This enables checking specific error conditions in error handling code.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "081",
+      "key": "REQ-C-OS-081",
+      "fields": {
+        "summary": "Provide OS-agnostic error abstraction",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The library shall provide an OS-independent error enumeration that maps platform-specific errno values to portable error codes, supporting both POSIX-compliant and platform-specific errors.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "082",
+      "key": "REQ-C-OS-082",
+      "fields": {
+        "summary": "Support Object Seam pattern for testability",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "All OS abstraction classes shall inherit from ObjectSeam<T> template to enable dependency injection and test double substitution without link-time dependencies.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "083",
+      "key": "REQ-C-OS-083",
+      "fields": {
+        "summary": "Wrap POSIX spawn operations",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The library shall wrap posix_spawn family functions with type-safe interfaces supporting process creation, attributes (signals, scheduling, credentials), and file actions.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "084",
+      "key": "REQ-C-OS-084",
+      "fields": {
+        "summary": "Provide pthread operation abstractions",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The library shall provide thread management including thread naming, CPU clock access, mutex/condition variable operations, and scheduling parameters.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "085",
+      "key": "REQ-C-OS-085",
+      "fields": {
+        "summary": "Support QNX-specific IPC mechanisms",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "For QNX builds, the library shall provide abstractions for native IPC mechanisms including channels (MsgReceive, MsgSend), pulses, and connection management.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "086",
+      "key": "REQ-C-OS-086",
+      "fields": {
+        "summary": "Wrap file control operations",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The library shall wrap fcntl and open operations with type-safe Command, Open, and Operation enumerations replacing raw integer flags.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "087",
+      "key": "REQ-C-OS-087",
+      "fields": {
+        "summary": "Support memory-mapped file operations",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The library shall wrap mmap/munmap with typed Protection and Map flag enumerations, plus shared memory operations (shm_open, shm_unlink).",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "088",
+      "key": "REQ-C-OS-088",
+      "fields": {
+        "summary": "Provide socket operation abstractions",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The library shall provide socket creation, binding, connection, and data transfer operations with typed Domain and MessageFlag enumerations.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "089",
+      "key": "REQ-C-OS-089",
+      "fields": {
+        "summary": "Use preprocessor-based platform selection",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "Implementations shall use #if defined(__QNX__) and #if defined(__linux__) to conditionally compile platform-specific code paths without exposing them in the API.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "090",
+      "key": "REQ-C-OS-090",
+      "fields": {
+        "summary": "Support bitmask operators for flag enums",
+        "issuetype": {
+          "id": "1",
+          "description": "Code implementation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "Implement bitmask operators for enum flags used by OS abstractions to simplify flag combinations and checks.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "018",
+      "key": "REQ-DOC-Result-018",
+      "fields": {
+        "summary": "Result-Based Error Handling",
+        "issuetype": {
+          "id": "1",
+          "description": "Documentation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The Result library shall provide an error handling mechanism that enables functions to return either successful values or error information without using C++ exceptions.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "019",
+      "key": "REQ-DOC-Result-019",
+      "fields": {
+        "summary": "Domain-Specific Error Information",
+        "issuetype": {
+          "id": "1",
+          "description": "Documentation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The Result library shall support user-defined error domains and error codes.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "020",
+      "key": "REQ-DOC-Result-020",
+      "fields": {
+        "summary": "Type-Safe Error Handling",
+        "issuetype": {
+          "id": "1",
+          "description": "Documentation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The Result library shall enforce compile-time type safety for error handling operations.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "021",
+      "key": "REQ-DOC-Result-021",
+      "fields": {
+        "summary": "Standard Library Integration",
+        "issuetype": {
+          "id": "1",
+          "description": "Documentation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The Result library shall provide conversion utilities to transform Result objects into standard library optional type, with enforced error handling.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "022",
+      "key": "REQ-DOC-Result-022",
+      "fields": {
+        "summary": "Deterministic Behavior",
+        "issuetype": {
+          "id": "1",
+          "description": "Documentation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The Result library shall provide deterministic behavior with no dynamic memory allocation.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "023",
+      "key": "REQ-DOC-Result-023",
+      "fields": {
+        "summary": "Exception-Free Operation",
+        "issuetype": {
+          "id": "1",
+          "description": "Documentation requirement",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The Result library shall operate without throwing C++ exceptions.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "024",
+      "key": "REQ-DOC-Result-024",
+      "fields": {
+        "summary": "Error Domain Implementation (AoU)",
+        "issuetype": {
+          "id": "1",
+          "description": "Documentation requirement - AoU",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The user shall implement error domain classes and error code enumerations according to the library's interface specification.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "025",
+      "key": "REQ-DOC-Result-025",
+      "fields": {
+        "summary": "Result Value Handling (AoU)",
+        "issuetype": {
+          "id": "1",
+          "description": "Documentation requirement - AoU",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The user shall check and handle both successful and error states of Result objects before accessing contained values to prevent undefined behavior.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "026",
+      "key": "REQ-DOC-Result-026",
+      "fields": {
+        "summary": "Thread Safety (AoU)",
+        "issuetype": {
+          "id": "1",
+          "description": "Documentation requirement - AoU",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The user shall ensure appropriate synchronization mechanisms when using Result objects in multi-threaded environments, as the library provides no internal thread safety guarantees.",
+        "verifiableByCodeOnly": true
+      }
+    },
+    {
+      "id": "027",
+      "key": "REQ-DOC-Result-027",
+      "fields": {
+        "summary": "Resource Lifetime (AoU)",
+        "issuetype": {
+          "id": "1",
+          "description": "Documentation requirement - AoU",
+          "name": "Requirement"
+        },
+        "status": {
+          "id": "approved",
+          "name": "Approved"
+        },
+        "assignee": {
+          "displayName": "Unassigned",
+          "accountId": "unassigned"
+        },
+        "reporter": {
+          "displayName": "System",
+          "accountId": "system"
+        },
+        "description": "The user shall ensure that error domain objects and referenced resources remain valid throughout the entire lifetime of any dependent Result or Error objects.",
+        "verifiableByCodeOnly": true
+      }
+    }
+  ]
+}
